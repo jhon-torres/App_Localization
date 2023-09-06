@@ -26,69 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   GoogleMapController? _mapController;
   Set<Marker> _markers = {}; // Conjunto de marcadores
   List<Map<String, dynamic>> userList = [];
-  Marker? _firstMarker;
-
-   Location location = new Location();
-
-  Future<LocationData?> _determinePosition() async {
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-    LocationData _locationData;
-
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
-        return null;
-      }
-    }
-
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        return null;
-      }
-    }
-
-    _locationData = await location.getLocation();
-    return _locationData;
-  }
-
-  void updateLocation(double? newLatitud, double? newLongitud) async {
-    final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-    final currentUser = FirebaseAuth.instance.currentUser;
-    try {
-      await _firestore.collection('people').doc(currentUser?.uid).update({
-        'latitud': newLatitud,
-        'longitud': newLongitud,
-      });
-      print('Ubicación actualizada exitosamente.');
-    } catch (e) {
-      print('Error al actualizar la ubicación: $e');
-    }
-  }
-
-  Future<void> _init() async {
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    final currentPosition = await _determinePosition();
-    User? user = _auth.currentUser;
-    if (user != null) {
-      if (currentPosition != null) {
-        updateLocation(currentPosition.latitude, currentPosition.longitude);
-      } else {
-        print('No se pudo obtener la posición actual.');
-      }
-    }
-  }
-
-  void _startPeriodicInit() {
-    location.onLocationChanged.listen((LocationData currentLocation) {
-      _init();
-    });
-    location.enableBackgroundMode(enable: true);
-  }
-  
+  Marker? _firstMarker;  
 
   @override
   void initState() {
@@ -138,17 +76,14 @@ class _HomeScreenState extends State<HomeScreen> {
     if (_mapController != null) {
       _mapController!.animateCamera(CameraUpdate.newLatLngZoom(
         position,
-        12, // Ajusta este valor para establecer el nivel de zoom deseado
+        15, // Ajusta este valor para establecer el nivel de zoom deseado
       ));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    User? user = _auth.currentUser;
-    print(user);
-    _startPeriodicInit();
+
     return Scaffold(
       appBar: AppBar(       
         backgroundColor: hexStringToColor("32D9CB"),
@@ -156,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.exit_to_app),
-            onPressed: () {
-              FirebaseAuth.instance.signOut().then((value) {
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut().then((value) {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => LoginScreen()),
@@ -172,11 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ? CameraPosition(
                 target: _firstMarker!.position,
                 zoom:
-                    12, // Ajusta este valor para establecer el nivel de zoom deseado
+                    15, // Ajusta este valor para establecer el nivel de zoom deseado
               )
             : const CameraPosition(
                 target: LatLng(-0.204742, -78.485126),
-                zoom: 10,
+                zoom: 15,
               ),
         onMapCreated: _onMapCreated,
         markers: _markers, // Usar el conjunto de marcadores actual
