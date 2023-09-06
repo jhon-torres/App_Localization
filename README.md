@@ -25,8 +25,8 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   
   En caso de no tener claro esto a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
 
-  <picture>
-  <img alt="Inicio de sesión" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Login.jpg" width="250">
+<picture>
+  <img alt="Inicio de sesión" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Login.jpg?raw=true" width="250">
 </picture>
   
 </details>
@@ -37,8 +37,8 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   
   En caso de no tener claro lo mencionado a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
 
-  <picture>
-  <img alt="Registro" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Registro.jpg" width="250">
+<picture>
+  <img alt="Registro" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Registro.jpg?raw=true" width="250">
 </picture>
   
 </details>
@@ -49,11 +49,11 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   
   En caso de no tener claro lo mencionado a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
 
-  <picture>
-  <img alt="Inicio 1" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Inicio.jpg" width="250">
+<picture>
+  <img alt="Inicio 1" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Inicio.jpg?raw=true" width="250">
 </picture>
-  <picture>
-  <img alt="Inicio 2" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Inicio%202.jpg" width="250">
+<picture>
+  <img alt="Inicio 2" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Inicio%202.jpg?raw=true" width="250">
 </picture>
   
 </details>
@@ -62,5 +62,11 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
 Finalmente, la aplicación realiza el almacenamiento de información en Firebase a través de Firestore y Firebase Authentication. Dentro de estas bases de datos, se guardan detalles como la dirección de correo, la ubicación (longitud y latitud), el UID del usuario y su nombre de usuario. Firestore se actualiza automáticamente a medida que el usuario se desplaza, y la información de cada usuario se almacena en una colección de Firestore llamada "locations". En esta colección, se encuentran los siguientes parámetros: Nombre, correo electrónico, latitud, longitud y nombre de usuario.
 
 Evidencia del registro de información:
+<picture>
+  <img alt="Firebase 1" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Captura%20de%20pantalla%202023-09-06%20122921.png?raw=true">
+</picture>
 
+<picture>
+  <img alt="Firebase 2" src="https://github.com/AleBD72/Geolocation-Flutter/blob/main/Pantallas/Captura%20de%20pantalla%202023-09-06%20123601.png?raw=true">
+</picture>
 
