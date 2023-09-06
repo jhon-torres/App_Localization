@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:proyecto_am/screens/home_screen.dart';
 import 'package:proyecto_am/screens/login_screen.dart';
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -8,13 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:proyecto_am/utils/color_utils.dart';
 
-
-import 'package:get/get.dart';
-import 'package:proyecto_am/screens/home_screen.dart';
-import 'package:location/location.dart';
-
-import 'package:firebase_core/firebase_core.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -61,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         markerId: MarkerId(user['name']),
         position: LatLng(user['latitud'].toDouble(), user['longitud'].toDouble()),
         infoWindow: InfoWindow(title: user['name']),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue), // Personaliza
       );
       setState(() {
         _markers.add(marker);
