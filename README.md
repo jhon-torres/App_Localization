@@ -24,6 +24,10 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   Esta pantalla cuenta con dos campos de entrada de texto (TextInput) en los cuales ingresaremos nuestras credenciales de correo y contraseña. Luego, pulsaremos "LOGIN" para acceder si ya estamos registrados. En caso de no tener una cuenta, hay un botón que redirige al usuario a la pantalla de registro.
   
   En caso de no tener claro esto a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
+
+  <picture>
+  <img alt="Inicio de sesión" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Login.jpg" width="250">
+</picture>
   
 </details>
 
@@ -34,7 +38,7 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   En caso de no tener claro lo mencionado a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
 
   <picture>
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+  <img alt="Registro" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Registro.jpg" width="250">
 </picture>
   
 </details>
@@ -44,11 +48,19 @@ Para ofrecer las funcionalidades mencionadas, la aplicación consta de tres pant
   La pantalla de inicio presenta una experiencia visualmente enriquecedora al mostrar la ubicación actual del usuario en un mapa de Google Maps. Además de esta información personalizada, los usuarios tienen la capacidad de visualizar la ubicación o geolocalización de otros usuarios registrados en la plataforma. Cada usuario se representa en el mapa con una marca de color azul, lo que facilita la identificación por medio del nombre de usuarios el cual se muestra al pulsar una marca especifica, y el seguimiento de las diferentes posiciones en tiempo real. Esta característica permite a los usuarios interactuar y compartir ubicaciones de manera eficiente dentro de la aplicación.
   
   En caso de no tener claro lo mencionado a continucación se puede apreciar la vista de dicha pantalla en un dispositivo:
+
+  <picture>
+  <img alt="Inicio 1" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Inicio.jpg" width="250">
+</picture>
+  <picture>
+  <img alt="Inicio 2" src="https://github.com/AleBD72/Geolocation-Flutter/blob/e8af5ddce2870e99238bae0f251766f3dee7d1f5/Pantallas/Inicio%202.jpg" width="250">
+</picture>
   
 </details>
 
 #### Guardado de la información en la base de datos de Firebase:
+Finalmente, la aplicación realiza el almacenamiento de información en Firebase a través de Firestore y Firebase Authentication. Dentro de estas bases de datos, se guardan detalles como la dirección de correo, la ubicación (longitud y latitud), el UID del usuario y su nombre de usuario. Firestore se actualiza automáticamente a medida que el usuario se desplaza, y la información de cada usuario se almacena en una colección de Firestore llamada "locations". En esta colección, se encuentran los siguientes parámetros: Nombre, correo electrónico, latitud, longitud y nombre de usuario.
 
-
+Evidencia del registro de información:
 
 
