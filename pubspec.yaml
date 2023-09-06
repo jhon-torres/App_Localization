@@ -1,0 +1,35 @@
+name: proyecto_am
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cloud_firestore: ^4.9.1
+  firebase_auth: ^4.8.0
+  google_maps_flutter: ^2.4.0
+  shared_preferences: ^2.2.0
+  location: ^5.0.3
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.15.1
+  equatable: ^2.0.3
+  get: ^4.1.4
+  flutter_bloc: ^7.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+      - assets/images/
